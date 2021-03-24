@@ -9,7 +9,15 @@
   <body>
     <h1>LED Pattern Recorder</h1>
     <div id="status"></div>
+    File type:
+    <select id="file-type">
+      <option value="ndjson" selected>NDJSON / JSON Lines</option>
+      <option value="binary">Binary</option>
+    </select>
+    <br />
+    FPS: <input type="number" value="60" id="fps" /><br />
     <button onclick="download()">Download</button>
+    <button onclick="reset()">Reset</button>
     <script src="led-recorder.js"></script>
   </body>
 </html>
