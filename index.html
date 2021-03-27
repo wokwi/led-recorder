@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LED Recorder</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>LED Pattern Recorder</h1>
-    <div id="status"></div>
-    File type:
-    <select id="file-type">
-      <option value="ndjson" selected>NDJSON / JSON Lines</option>
-      <option value="binary">Binary</option>
-    </select>
-    <br />
-    FPS: <input type="number" value="60" id="fps" /><br />
+    <h1>Wokwi LED Pattern Recorder</h1>
+    <div id="status" class="status"></div>
+    <div class="form">
+      <label for="file-type">File type:</label>
+      <select id="file-type">
+        <option value="ndjson" selected>NDJSON / JSON Lines</option>
+        <option value="binary">Binary</option>
+      </select>
+      <label for="fps">FPS:</label>
+      <input type="number" value="60" id="fps" /><br />
+    </div>
     <button onclick="download()">Download</button>
     <button onclick="reset()">Reset</button>
     <script src="led-recorder.js"></script>

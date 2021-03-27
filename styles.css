@@ -1,10 +1,45 @@
 html {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 48px 16px;
   background: transparent;
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+.status {
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.form {
+  display: grid;
+  grid-template-columns:
+    minmax(100px, max-content)
+    200px 20%;
+  grid-gap: 8px;
+  margin-bottom: 16px;
+}
+
+label {
+  grid-column: 1 / 2;
+}
+
+input,
+select {
+  grid-column: 2 / 3;
 }
