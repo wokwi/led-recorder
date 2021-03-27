@@ -145,8 +145,10 @@ let listener = setInterval(() => {
 }, 200);
 
 window.addEventListener('message', ({ data }) => {
-  if (data.neopixels) {
-    recorder.recordEvent(data.$nanos, data.neopixels);
+  const { $nanos, neopixels } = data;
+  if (neopixels) {
+    const pixels = neopixels.pixels instanceof Uint32Array ? neopixels.pixels : neopixels;
+    recorder.recordEvent($nanos, pixels);
     updateStatus(`Captured ${recorder.frameCount(getFPS())} frames`);
     if (listener) {
       clearInterval(listener);
